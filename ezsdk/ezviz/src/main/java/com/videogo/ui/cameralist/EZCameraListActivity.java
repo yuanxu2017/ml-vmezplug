@@ -111,10 +111,10 @@ public class EZCameraListActivity extends Activity implements OnClickListener, S
     private LinearLayout mNoCameraTipLy = null;
     private LinearLayout mGetCameraFailTipLy = null;
     private TextView mCameraFailTipTv = null;
-    private Button mAddBtn;
-    private Button mUserBtn;
-    private TextView mMyDevice;
-    private TextView mShareDevice;
+  //  private Button mAddBtn;
+ //   private Button mUserBtn;
+ //   private TextView mMyDevice;
+ //   private TextView mShareDevice;
 
     private boolean bIsFromSetting = false;
 
@@ -194,50 +194,6 @@ public class EZCameraListActivity extends Activity implements OnClickListener, S
     }
 
     private void initView() {
-/*
-        mMyDevice = (TextView) findViewById(R.id.text_my);
-        mShareDevice = (TextView) findViewById(R.id.text_share);
-        mAddBtn = (Button) findViewById(R.id.btn_add);
-        mUserBtn = (Button) findViewById(R.id.btn_user);
-        mUserBtn.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // popLogoutDialog();
-                finish();
-            }
-        });
-
-        mAddBtn.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(EZCameraListActivity.this, CaptureActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        mShareDevice.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mShareDevice.setTextColor(getResources().getColor(R.color.orange_text));
-                mMyDevice.setTextColor(getResources().getColor(R.color.black_text));
-                mAdapter.clearAll();
-                mLoadType = LOAD_SHARE_DEVICE;
-                getCameraInfoList(true);
-            }
-        });
-
-        mMyDevice.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mShareDevice.setTextColor(getResources().getColor(R.color.black_text));
-                mMyDevice.setTextColor(getResources().getColor(R.color.orange_text));
-                mAdapter.clearAll();
-                mLoadType = LOAD_MY_DEVICE;
-                getCameraInfoList(true);
-            }
-        });
-
-*/
         mNoMoreView = getLayoutInflater().inflate(R.layout.no_device_more_footer, null);
         mAdapter = new EZCameraListAdapter(this);
         mAdapter.setOnClickListener(new EZCameraListAdapter.OnClickListener() {

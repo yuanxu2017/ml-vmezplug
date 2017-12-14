@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-        id="cordova-plugin-ezviz"
+        id="ml-vmezplug"
         version="0.7.0">
 
-    <name>Ezviz</name>
+    <name>VMezplug</name>
 
     <engines>
         <engine name="cordova" version=">=3.4.0"/>
@@ -17,7 +17,7 @@
 
     <platform name="android">
         <preference name="APP_KEY"/>
-        <preference name="PKG_NAME" default="com.usky.smarthome" />
+        <preference name="PKG_NAME" default="com.ml.mobilephone" />
         <config-file target="./res/values/strings.xml" parent="/resources">
             <string name="appkey">$APP_KEY</string>
         </config-file>

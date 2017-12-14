@@ -5,13 +5,16 @@ module.exports = {
     * 萤石sdk初始化
     * params: accessToken 用户的唯一凭证
     */
-    init:function(accessToken, successCallback, errorCallback){
+    init:function(appKey,accessToken, successCallback, errorCallback){
         cordova.exec(
             successCallback,
             errorCallback, 
             "ezviz", 
             "init", 
-            [accessToken || '']
+            [
+                appKey || '',
+                accessToken || ''
+            ]
         );
     },
     /*

@@ -32,6 +32,7 @@ import com.videogo.util.LogUtil;
 
 public class ezviz extends CordovaPlugin {
 
+    public String appKey = "";
     public String accessToken = "";//用户token，用于调用EZOpenSDK的api接口
     public String telNo = "";
     public String eventName = "";
@@ -50,8 +51,9 @@ public class ezviz extends CordovaPlugin {
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 
         if(action.equals("init") || action.equals("setAccesstoken")){
-            accessToken=data.getString(0);
-
+            appKey = data.getString(0);
+            accessToken=data.getString(1);
+            initSDK(appKey);
             if(!accessToken.equals("")) {
                 EZOpenSDK.getInstance().setAccessToken(accessToken);
             }
@@ -160,13 +162,13 @@ public class ezviz extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        initSDK();
+        //initSDK();
     }
 
     /**
      * EZOpenSDK初始化
      */
-    private void initSDK() {
+    private void initSDK(String APPKEY) {
         /**
          * sdk日志开关，正式发布需要去掉
          */
@@ -180,8 +182,9 @@ public class ezviz extends CordovaPlugin {
         /**
          * APP_KEY请替换成自己申请的
          */
-        LogUtil.debugLog("smarthome-list:",this.preferences.getString("APPKEY",""));
-        EZOpenSDK.initLib(this.cordova.getActivity().getApplication(),this.preferences.getString("APPKEY",""), "");
+        //LogUtil.debugLog("smarthome-list:",this.preferences.getString("APPKEY",""));
+        LogUtil.debugLog("smarthome-list:",APPKEY);
+        EZOpenSDK.initLib(this.cordova.getActivity().getApplication(),APPKEY, "");
     }
 
     /**

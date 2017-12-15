@@ -120,6 +120,9 @@ import java.util.TimerTask;
 import ezviz.ezopensdk.R;
 import com.videogo.RootActivity;
 import com.videogo.data.ExtraInfo;
+
+import com.videogo.remoteplayback.list.RemoteListContant;
+
 /**
  * 实时预览2.7
  *
@@ -1965,6 +1968,17 @@ public class EZRealPlayActivity extends Activity implements OnClickListener, Sur
      * @since V1.0
      */
     private void onRecordBtnClick() {
+        int camera_index = 0;
+        EZCameraInfo cameraInfo = EZUtils.getCameraInfoFromDevice(mDeviceInfo, camera_index);
+                        if (cameraInfo == null) {
+                            return;
+                        }
+                        intent = new Intent(EZRealPlayActivity.this, PlayBackListActivity.class);
+                        intent.putExtra(RemoteListContant.QUERY_DATE_INTENT_KEY, DateTimeUtil.getNow());
+                        intent.putExtra(IntentConsts.EXTRA_CAMERA_INFO, cameraInfo);
+                        startActivity(intent);
+
+
         mControlDisplaySec = 0;
         if (mIsRecording) {
             stopRealPlayRecord();

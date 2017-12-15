@@ -1978,7 +1978,7 @@ public class EZRealPlayActivity extends Activity implements OnClickListener, Sur
                         intent.putExtra(IntentConsts.EXTRA_CAMERA_INFO, cameraInfo);
                         startActivity(intent);
 
-
+        return;
         mControlDisplaySec = 0;
         if (mIsRecording) {
             stopRealPlayRecord();

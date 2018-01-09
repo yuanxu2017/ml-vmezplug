@@ -72,6 +72,7 @@ public class ezviz extends CordovaPlugin {
             String accessToken = data.getString(0);
             String deviceSerial = data.getString(1);
             int camera_index = data.getInt(2);
+            String devName   = data.getInt(4);
             try{
                 if(!accessToken.equals("")) {
                     EZOpenSDK.getInstance().setAccessToken(accessToken);
@@ -112,8 +113,9 @@ public class ezviz extends CordovaPlugin {
                     Bundle extraInfo = new Bundle();
                     extraInfo.putParcelable(IntentConsts.EXTRA_CAMERA_INFO,cameraInfo);
                     extraInfo.putParcelable(IntentConsts.EXTRA_DEVICE_INFO,deviceInfo);
-                    extraInfo.putString("com.laitron.ezviz.action_on_preview",caption);
+                    extraInfo.putString("com.laitron.ezviz.cameracaption_on_preview",caption);
                     extraInfo.putString("com.laitron.ezviz.evt_on_preview",eventName);
+
                     extraInfo.putString("com.laitron.ezviz.light_on_preview",lightCaption);
                     toIntent.putExtras(extraInfo);
                     cordova.getActivity().startActivityForResult(toIntent, 100);

@@ -34,7 +34,7 @@ module.exports = {
     *   doorCaption 开门动作
     *   lightCaption 开灯动作
     */
-    preview:function(accessToken,deviceSerial,cameraIndex,eventName,doorCaption,lightCaption,successCallback,errorCallback){
+    preview:function(accessToken,deviceSerial,cameraIndex,eventName,cameraCaption,lightCaption,successCallback,errorCallback){
         cordova.exec(
             successCallback || function(){},
             errorCallback || function(error){ 
@@ -47,7 +47,7 @@ module.exports = {
                 deviceSerial,
                 cameraIndex || 0,
                 eventName || "",
-                doorCaption || "",
+                cameraCaption || "",
                 lightCaption || ""
             ]
         );

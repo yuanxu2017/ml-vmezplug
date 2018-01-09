@@ -136,7 +136,7 @@
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
         <source-file src="src/android/ezviz.java" target-dir="src/com/laitron/ezviz/"/>
         <!-- framework src="ezsdk/android/build.gradle" custom="true" type="gradleReference" / -->
-        <resource-file src="libs/android/ezvizsdk.aar" target="libs/ezvizsdk.aar" />
+        <resource-file src="libs/android/mlezsdk.aar" target="libs/mlezsdk.aar" />
         <!-- source-file src="libs/EZOpenSDK.jar" target-dir="libs" framework="true" / -->
     </platform>
 

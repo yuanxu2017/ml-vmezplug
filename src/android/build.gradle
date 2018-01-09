@@ -6,7 +6,7 @@ repositories{
 }
 
 dependencies {
-   compile(name:'ezvizsdk', ext:'aar')
+   compile(name:'mlezsdk', ext:'aar')
     compile 'com.android.support:appcompat-v7:20.0.0'
 }
 

@@ -72,7 +72,6 @@ public class ezviz extends CordovaPlugin {
             String accessToken = data.getString(0);
             String deviceSerial = data.getString(1);
             int camera_index = data.getInt(2);
-            String devName   = data.getInt(4);
             try{
                 if(!accessToken.equals("")) {
                     EZOpenSDK.getInstance().setAccessToken(accessToken);
